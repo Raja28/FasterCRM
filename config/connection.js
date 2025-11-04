@@ -8,7 +8,7 @@ async function connect() {
     return;
   }
 
-  const uri = process.env.MONGODB_URI;
+  const uri = process.env.MONGODB_URL;
   if (!uri) {
     console.error("❌ MONGODB_URI is missing in environment variables");
     throw new Error("Missing MONGODB_URI");
@@ -23,6 +23,8 @@ async function connect() {
     console.log("✅ MongoDB connected successfully");
   } catch (err) {
     console.error("❌ MongoDB connection error:", err);
+  } finally {
+    return isConnected === 1 ? true:false
   }
 }
 
