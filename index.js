@@ -5,7 +5,7 @@ const serverless = require("serverless-http");
 app.use(express.json())
 const cors = require("cors")
 const { connect } = require("./config/connection")
-
+const PORT = process.env.PORT || 2026
 app.use(cors({
     origin: "http://localhost:2025",
     credentials: true
