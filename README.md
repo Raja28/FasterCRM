@@ -66,7 +66,7 @@ This project uses the MERN stack's backend components with secure authentication
     ```dotenv
     # .env
     PORT=2025
-    MONGO_URI=mongodb+srv://rja69100_db_user:pgACgUOi63mHZ9A6@fastercrm1.5jlwhjq.mongodb.net/
+    MONGO_URI=mongodb+srv://rja69100_db_user:pgACgUOi63mHZ9A6@fastercrm1.5jlwhjq.mongodb.net/?appName=fasterCRM1
     # Generate a long, random hexadecimal string for JWT_SECRET
     JWT_SECRET= "YOUR SECRET KEY" 
     ```
