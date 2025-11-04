@@ -24,7 +24,6 @@ const authRouter = require("./routes/authRoutes")
 app.use("/api/enquiries", enquiryRouter)
 app.use("/api/auth", authRouter)
 
-const { connect } = require("./config/connection");
 
 connect()
   .then(() => {
