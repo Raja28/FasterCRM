@@ -49,7 +49,7 @@ This project uses the MERN stack's backend components with secure authentication
 1.  Clone the repository:
 
     ```bash
-    git clone [https://github.com/yourusername/FastorCRM.git](https://github.com/yourusername/FastorCRM.git)
+    git clone https://github.com/Raja28/FasterCRM.git
     cd FastorCRM
     ```
 
