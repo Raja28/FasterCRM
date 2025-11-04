@@ -34,3 +34,5 @@ connect()
 .catch((err)=>{
     console.error("❌ Failed to start server due to DB connection error:", err);
 })
+
+module.exports = app;
