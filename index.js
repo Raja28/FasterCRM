@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express()
 require("dotenv").config()
-const PORT = process.env.PORT || 2026
+const serverless = require("serverless-http");
 app.use(express.json())
 const cors = require("cors")
 const { connect } = require("./config/connection")
@@ -24,20 +24,12 @@ const authRouter = require("./routes/authRoutes")
 app.use("/api/enquiries", enquiryRouter)
 app.use("/api/auth", authRouter)
 
-// connect()
-// .then(()=>{
-//     app.listen(PORT, ()=>{
-//         console.log("Server running on port:", PORT);
-    
-//     })
-// })
-// .catch((err)=>{
-//     console.error("❌ Failed to start server due to DB connection error:", err);
-// })
-
- app.listen(PORT, ()=>{
-        console.log("Server running on port:", PORT);
-    
-    })
+if (process.env.NODE_ENV !== "production") {
+    const PORT = process.env.PORT || 2026;
+    app.listen(PORT, () => {
+        console.log(`Server running locally on port ${PORT}`);
+    });
+}
 
 module.exports = app;
+module.exports.handler = serverless(app);
