@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+require("dotenv").config();
 let isConnected = false;
 
 async function connect() {
@@ -15,10 +15,7 @@ async function connect() {
   }
 
   try {
-    const db = await mongoose.connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    const db = await mongoose.connect(uri);
     isConnected = db.connections[0].readyState;
     console.log("✅ MongoDB connected successfully");
   } catch (err) {
