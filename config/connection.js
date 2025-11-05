@@ -20,9 +20,8 @@ async function connect() {
     console.log("✅ MongoDB connected successfully");
   } catch (err) {
     console.error("❌ MongoDB connection error:", err);
-  } finally {
-    return isConnected === 1 ? true:false
-  }
+    throw err
+  } 
 }
 
 module.exports = { connect };
